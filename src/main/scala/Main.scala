@@ -1,5 +1,6 @@
 @main def hello(): Unit =
-  println("Hello world!")
+  println("Hello world! How are you?")
   println(msg)
 
-def msg = "I was compiled by Scala 3. :)"
+def msg =
+  "I was compiled by Scala 3. :)"
