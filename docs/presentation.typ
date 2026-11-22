@@ -1,6 +1,6 @@
 #import "@preview/cetz:0.5.2"
 
-= Compilation of seasonal and momentary tourist features of the Da Lat
+= Compilation of seasonal and momentary tourist features of Đà Lạt city
 
 Instructor:
  - Võ Thị Ngọc Châu
