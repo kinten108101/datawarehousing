@@ -12,10 +12,20 @@ Members:
  - Nguyễn Hưng
  - Đỗ Thế Phong
 
-== Scenario
+== Context
 
-We are working in an OTA (Online Travel Agency) start-up e.g. AirBnb, Traveloka, Agoda, TripAdvisor. It is close to Christmas, we are trying to come up with a theme for our advertisement campaign(s). 
+We are working in an OTA (Online Travel Agency) start-up e.g. AirBnb, Traveloka, Agoda, TripAdvisor. It is close to Christmas, we are trying to come up with a theme for our advertisement campaign(s).
 
 == Decision makers
 
  + Ads manager
+
+== Expected goals
+
+== Detailed system architecture
+
+== Decision flow
+
+== Discussion: risks and limitations
+
+== Development timeline
