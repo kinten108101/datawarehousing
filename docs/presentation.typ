@@ -7,7 +7,7 @@ Instructor:
 
 Members:
  - Lê Nguyễn Gia Bảo (bao.le108101\@hcmut.edu.vn)
- - Quang Minh ()
+ - Phan Quang Minh ()
  - Xuân Sang
  - Nguyễn Hưng
  - Đỗ Thế Phong
