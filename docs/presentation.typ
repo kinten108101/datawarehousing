@@ -3,14 +3,14 @@
 = Compilation of seasonal and momentary tourist features of the Da Lat
 
 Instructor:
- - Vo Chau
+ - Võ Thị Ngọc Châu
 
 Members:
- - Le Nguyen Gia Bao (bao.le108101\@hcmut.edu.vn)
+ - Lê Nguyễn Gia Bảo (bao.le108101\@hcmut.edu.vn)
  - Quang Minh ()
- - Xuan Sang
- - Nguyen Hung
- - Do The Phong
+ - Xuân Sang
+ - Nguyễn Hưng
+ - Đỗ Thế Phong
 
 == Scenario
 
