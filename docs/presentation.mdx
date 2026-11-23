@@ -63,7 +63,7 @@ There is no specific prior art, we engineer an equation based on what we need.
 
 score(t) = w1 x Seasonal(t) + w2 x Momentary(t) + w3 x Sentiment(t) + w4 x Weather(t)
 
-where w1 + w2 + w3 + w4 = 1
+where w1 + w2 + w3 + w4 = 1 and 0 \<= w1,w2,w3,w4 \<= 1
 
 ## System architecture
 
@@ -71,7 +71,7 @@ It is a (classicial) two-level architecture, an ETL pipeline
 
 Why a two-level architecture and not an independent data mart architecture, or a lakehouse?
 
-A single data warehouse at the storage area means that all front-end tools access from one centralized source that is the storage. Centralization can be troublesome. However, it is simple, good for now. (Also I can't think of good contextual reasons to make it more robust).
+A single data warehouse at the storage area means that all front-end tools access from one centralized source that is the storage. Centralization can be troublesome. It is less project-oriented. However, it is simple, good for now. (Also I can't think of good contextual reasons to make it more robust). (reference: slides CO4031 DW-DSS - Chapter 2 - DW-Basic Issues, page 7, adapted from Strange (1997))
 
 Our architecture has four layers:
 
