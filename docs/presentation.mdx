@@ -20,24 +20,31 @@ Members:
 
 ## Decision makers
 
+## Decision flow
+
+## Mathematical model
+
 ## System architecture
 
-### ETL pipeline architecture diagram
-
-It is a (classicial) two-level architecture [^1]
+It is a (classicial) two-level architecture, an ETL pipeline
 
 1. Source data systems
 2. Data staging area
 3. Data storage area
 4. Front-end
 
-[^1]: refer to slides CO4031 DW-DSS - Chapter 2 - DW-Basic Issues, page 5 
+refer to slides CO4031 DW-DSS - Chapter 2 - DW-Basic Issues, page 5 
 
-### Medallion architecture diagram
+Draw or generate a diagram lol. Please base on the slides above.
 
-1. Data sourcing layer
-2. Bronze layer
-3. Silver layer
+## Implementation
+
+For each layer, we derive appropriate subsystems by defining specific technologies
+
+1. Source data systems. Google Trends based on topic keywords.
+2. Data staging area. Apache Spark is a distributed computing system, we define computing steps that do ETL. The Scala programming language.
+3. Data storage area.
+4. Front-end
 
 ## Timeline
 
