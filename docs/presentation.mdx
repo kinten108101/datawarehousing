@@ -16,6 +16,14 @@ We are an travel company focusing on the Đà Lạt region. Đà Lạt is a popu
  - Seasonal cycles (theo mùa).
  - Momentary pulses (tức thời).
 
+An ad campaign that doesn't conform to these factors will risk not being able to connect with the demographic, ineffective. An example of a generic ad is like "20% discount this season!".
+
+There are questions:
+ 1. What are the themes that yield most opportunity?
+ 2. Is the trend still fresh, or is it going down / the bubble is bursting?
+ 3. What sub-demographic does it align? Teenagers? Adults? Families?
+ 4. How to we handle risks and back-up plans?
+
 Outline:
  1. Introduction
  2. Problem statement
@@ -49,26 +57,27 @@ We also know other roles with influence:
 
 ## Requirements
 
-We formulate that there are four questions:
- 1.
- 2.
- 3.
- 4.
-
-We formulate that there are three target KPIs (key performance indicators):
- 1. 
- 2.
- 3.
+Based on the questions in Introduction, we formulate that there are three target KPIs (key performance indicators):
+ 1. Marketing effectiveness
+ 2. Capital effectiveness
+ 3. Decision speed
 
 ## Decision flow
 
-## Mathematical model
+ 1. Set time window / range for campaign
+ 2. Show all theme trends
+ 3. (Drill-down) analysize of the theme trends
+ 4. What-if simulation
+ 5. Report and feedback
+
+## Mathematical model (work in progress)
 
 There is no specific prior art, we engineer an equation based on what we need.
 
 score(t) = w1 x Seasonal(t) + w2 x Momentary(t) + w3 x Sentiment(t) + w4 x Weather(t)
 
 where w1 + w2 + w3 + w4 = 1 and 0 \<= w1,w2,w3,w4 \<= 1
+and Momentary(t) = norm(Recent7d(t) / SeasonalAvg(t))
 
 ## System architecture
 
@@ -93,9 +102,12 @@ Our architecture has four layers:
 
 For each layer, we derive appropriate subsystems by defining specific technologies
 
-1. Source data systems. Google Trends based on theme keywords.
-2. Data staging area. Apache Spark is a distributed computing system, we define computing steps that do ETL. The Scala programming language.
+1. Source data systems. Google Trends based on theme keywords, Open-Meteo, Kaggle.
+2. Data staging area. Apache Spark is a distributed computing system, we define computing steps that do ETL. The Scala programming language is used to program Spark.
 3. Data storage area.
-4. Front-end
+4. Front-end. Qt Design Studio for low-code UI development.
 
 ## Timeline
+
+9/2026 - 20/11/2026: Formulation of problem & solution
+20/11/2026 - 30/12/2026: Implementation
