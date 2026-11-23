@@ -12,44 +12,85 @@ Members:
 
 ## Introduction
 
-Đà Lạt is a popular tourist attraction, however its popularity changes within a year, based on some factors:
+We are an travel company focusing on the Đà Lạt region. Đà Lạt is a popular tourist attraction, however its popularity changes within a year, based on some factors:
  - Seasonal cycles (theo mùa).
  - Momentary pulses (tức thời).
 
-## Problem statement
+Table of content:
+ 1. Introduction
+ 2. Business problem statement
+ 3. Decision makers
+ 4. Requirements
+
+## Business problem statement [^abc]
+
+[^abc]: I also call it "problem refinement"
+
+Who are we? We are an OTA (Online Travel Agency) startup, competing in the same space as Airbnb, Traveloka, Agoda, TripAdvisor.
+
+Who are our demographic? Travelers who use apps to book hotels and plan trips etc, use our app and competitors. Especially travelers of the Đà Lạt region which is our specialty, strength.
+
+What's the problem? Our marketing team is making an ad campaign, and needs a theme that best connects with the demographic now. Since it is nearing December, the theme should be related to winter / christmas (but of course, more specific than that).
+
+What we need? A set (1-3) of specific theme keywords.
 
 ## Decision makers
+
+We know that the main decision maker is the marketing manager.
+
+We also know other roles with influence:
+ - Content strategist. 
+ - Supply coordinator.
+
+## Requirements
+
+We formulate that there are four questions:
+ 1.
+ 2.
+ 3.
+ 4.
+
+We formulate that there are three target KPIs (key performance indicators):
+ 1. 
+ 2.
+ 3.
 
 ## Decision flow
 
 ## Mathematical model
 
+There is no specific prior art, we engineer an equation based on what we need.
+
+score(t) = w1 x Seasonal(t) + w2 x Momentary(t) + w3 x Sentiment(t) + w4 x Weather(t)
+
+where w1 + w2 + w3 + w4 = 1
+
 ## System architecture
 
 It is a (classicial) two-level architecture, an ETL pipeline
+
+Why a two-level architecture and not an independent data mart architecture, or a lakehouse?
+
+A single data warehouse at the storage area means that all front-end tools access from one centralized source that is the storage. Centralization can be troublesome. However, it is simple, good for now. (Also I can't think of good contextual reasons to make it more robust).
+
+Our architecture has four layers:
 
 1. Source data systems
 2. Data staging area
 3. Data storage area
 4. Front-end
 
-refer to slides CO4031 DW-DSS - Chapter 2 - DW-Basic Issues, page 5 
+(refer to slides CO4031 DW-DSS - Chapter 2 - DW-Basic Issues, page 5)
 
-Draw or generate a diagram lol. Please base on the slides above.
+(Draw or generate a diagram lol. Please base on the slides above.)
 
 ## Implementation
 
 For each layer, we derive appropriate subsystems by defining specific technologies
 
-1. Source data systems. Google Trends based on topic keywords.
+1. Source data systems. Google Trends based on theme keywords.
 2. Data staging area. Apache Spark is a distributed computing system, we define computing steps that do ETL. The Scala programming language.
 3. Data storage area.
 4. Front-end
 
 ## Timeline
-
-
-## Some questions audience can ask
-
-1. Why a two-level architecture and not an independent data mart architecture?
- - A single data warehouse at the storage area means that all front-end tools access from one centralized source that is the storage. Centralization can be troublesome. However, it is simple, good for now. (Also I can't think of good contextual reasons to make it more robust).
