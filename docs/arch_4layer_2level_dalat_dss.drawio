@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net" agent="Antigravity">
+  <diagram id="arch-two-level-etl" name="Classical Two-Level ETL DW Architecture">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1360" pageHeight="750" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lvl1_band" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.2;fontColor=#1E293B;fontFamily=Inter;align=center;verticalAlign=middle;fontSize=10;" value="&lt;b&gt;LEVEL 1 · OPERATIONAL / SOURCE DATA&lt;/b&gt;" vertex="1">
+          <mxGeometry height="28" width="270" x="40" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="etl_band" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 3;fillColor=#F8FAFC;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#475569;fontFamily=Inter;align=center;verticalAlign=middle;fontSize=10;" value="&lt;b&gt;ETL STAGING PIPELINE&lt;/b&gt;" vertex="1">
+          <mxGeometry height="28" width="280" x="365" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="lvl2_band" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#1E293B;strokeWidth=1.4;fontColor=#FFFFFF;fontFamily=Inter;align=center;verticalAlign=middle;fontSize=10;" value="&lt;b&gt;LEVEL 2 · CENTRALIZED DW (NO MARTS)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="28" width="290" x="700" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="dss_band" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.2;fontColor=#1E293B;fontFamily=Inter;align=center;verticalAlign=middle;fontSize=10;" value="&lt;b&gt;DECISION SUPPORT FRONT-END&lt;/b&gt;" vertex="1">
+          <mxGeometry height="28" width="275" x="1045" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1" parent="1" style="swimlane;startSize=44;rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#E2E8F0;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;fontFamily=Inter;fontSize=12;swimlaneFillColor=#FFFFFF;" value="&lt;font style=&quot;font-size:10px;&quot; color=&quot;#475569&quot;&gt;LAYER 1&lt;/font&gt;&lt;br&gt;&lt;b&gt;Source Data Systems&lt;/b&gt;" vertex="1">
+          <mxGeometry height="480" width="270" x="40" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="l1_ext_lbl" parent="layer1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Inter;fontSize=10;fontStyle=1;fontColor=#475569;" value="EXTERNAL SOURCES" vertex="1">
+          <mxGeometry height="18" width="238" x="16" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="src_trends" parent="layer1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Google Trends&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Seasonal &amp;amp; 7-day search index&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="238" x="16" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="src_meteo" parent="layer1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Open-Meteo API&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Đà Lạt temp &amp;amp; rainfall&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="238" x="16" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="src_kaggle" parent="layer1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Kaggle Datasets&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tourism reviews &amp;amp; polarity&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="238" x="16" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="l1_div" parent="layer1" style="line;strokeWidth=1.2;strokeColor=#CBD5E1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="2" width="238" x="16" y="266" as="geometry" />
+        </mxCell>
+        <mxCell id="l1_int_lbl" parent="layer1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Inter;fontSize=10;fontStyle=1;fontColor=#475569;" value="INTERNAL SOURCES" vertex="1">
+          <mxGeometry height="18" width="238" x="16" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="src_internal" parent="layer1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.4;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Theme &amp;amp; Segment Config&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Keywords · Weather rules · Feedback&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="238" x="16" y="306" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2" parent="1" style="swimlane;startSize=44;rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#334155;strokeColor=#334155;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Inter;fontSize=12;swimlaneFillColor=#F8FAFC;" value="&lt;font style=&quot;font-size:10px;&quot; color=&quot;#CBD5E1&quot;&gt;LAYER 2 · SPARK + SCALA&lt;/font&gt;&lt;br&gt;&lt;b&gt;Data Staging Area (ETL)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="480" width="280" x="365" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="etl_extract" parent="layer2" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Clean, preprocess&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Ingest&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Deduplicate&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Filter for Đà Lạt&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="244" x="18" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="etl_transform" parent="layer2" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Transform &amp;amp; derive&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Reconcile&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Match keywords&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#475569&quot;&gt;Normalize score [0,1]&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="154" width="244" x="18" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="etl_load" parent="layer2" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.4;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;font color=&quot;#475569&quot;&gt;Upsert Facts, Dims &amp;amp; Metadata&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="244" x="18" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="e_16" edge="1" parent="layer2" source="etl_extract" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_transform" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_17" edge="1" parent="layer2" source="etl_transform" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_load" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3" parent="1" style="swimlane;startSize=44;rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#1E293B;strokeWidth=2;fontColor=#FFFFFF;fontFamily=Inter;fontSize=12;swimlaneFillColor=#F8FAFC;" value="&lt;font style=&quot;font-size:10px;&quot; color=&quot;#CBD5E1&quot;&gt;LAYER 3 · POSTGRESQL / DUCKDB&lt;/font&gt;&lt;br&gt;&lt;b&gt;Data &amp;amp; Metadata Storage Area&lt;/b&gt;" vertex="1">
+          <mxGeometry height="480" width="290" x="700" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="dw_cyl" parent="layer3" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#FFFFFF;strokeColor=#1E293B;strokeWidth=1.6;fontColor=#0F172A;fontFamily=Inter;align=center;verticalAlign=middle;fontSize=11;" value="&lt;b&gt;Data Warehouse&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Single Source of Truth&lt;/font&gt;" vertex="1">
+          <mxGeometry height="96" width="190" x="50" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="dw_star" parent="layer3" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.4;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Star Schema Model&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#334155&quot;&gt;• &lt;b&gt;Fact:&lt;/b&gt; fact_theme_signal&lt;br&gt;• &lt;b&gt;Dims:&lt;/b&gt; Date · Theme · Segment · Weather&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="254" x="18" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="dw_meta" parent="layer3" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Metadata Repository&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Schemas · Lineage · Scoring rules&lt;/font&gt;" vertex="1">
+          <mxGeometry height="96" width="102" x="18" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="e_20" edge="1" parent="layer3" source="dw_cyl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=6 4;jumpStyle=arc;jumpSize=10;strokeColor=#64748B;strokeWidth=1.2;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="dw_star" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4" parent="1" style="swimlane;startSize=44;rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#E2E8F0;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;fontFamily=Inter;fontSize=12;swimlaneFillColor=#FFFFFF;" value="&lt;font style=&quot;font-size:10px;&quot; color=&quot;#475569&quot;&gt;LAYER 4 · QT DESIGN STUDIO&lt;/font&gt;&lt;br&gt;&lt;b&gt;Front-End (Presentation Tools)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="480" width="275" x="1045" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_1" parent="layer4" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Query &amp;amp; Trends&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;1–2. Set window · Ranked trends&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="239" x="18" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_2" parent="layer4" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.2;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Drill-Down Analysis&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;3. Keywords · Segment · Weather&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="239" x="18" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_3" parent="layer4" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.4;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;What-If Modeling&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;4. Adjust w₁..w₄ → score(t)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82" width="239" x="18" y="266" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_4" parent="layer4" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.4;fontColor=#0F172A;fontFamily=Inter;align=left;verticalAlign=middle;spacingLeft=12;spacingRight=10;fontSize=11;" value="&lt;b&gt;Reports &amp;amp; Briefs&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;5. Top 1–3 themes · Visual export&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82" width="239" x="18" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="e_24" edge="1" parent="layer4" source="ui_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_25" edge="1" parent="layer4" source="ui_2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_26" edge="1" parent="layer4" source="ui_3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fb_junc" parent="1" style="ellipse;fillColor=#334155;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="6" width="6" x="842" y="631" as="geometry" />
+        </mxCell>
+        <mxCell id="e_11" edge="1" parent="1" source="src_trends" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_extract" value="Extract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_12" edge="1" parent="1" source="src_meteo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_extract" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_13" edge="1" parent="1" source="src_kaggle" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_extract" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_14" edge="1" parent="1" source="src_internal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="etl_transform" value="Seed rules">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_15" edge="1" parent="1" source="etl_load" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=6 4;jumpStyle=arc;jumpSize=10;strokeColor=#334155;strokeWidth=1.4;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="src_internal" value="Cleaned dimension data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_18" edge="1" parent="1" source="etl_load" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="dw_star" value="Load DW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_19" edge="1" parent="1" source="etl_load" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="dw_meta" value="Metadata">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_21" edge="1" parent="1" source="dw_star" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_2" value="Feed / SQL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_22" edge="1" parent="1" source="dw_star" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_23" edge="1" parent="1" source="dw_cyl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jumpStyle=arc;jumpSize=10;strokeColor=#475569;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="ui_1" value="SQL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_27" edge="1" parent="1" source="ui_4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=6 4;jumpStyle=arc;jumpSize=10;strokeColor=#334155;strokeWidth=1.6;endArrow=none;endFill=0;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="fb_junc" value="Model / query results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_28" edge="1" parent="1" source="fb_junc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=6 4;jumpStyle=arc;jumpSize=10;strokeColor=#334155;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="dw_meta" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_29" edge="1" parent="1" source="fb_junc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=6 4;jumpStyle=arc;jumpSize=10;strokeColor=#334155;strokeWidth=1.6;endArrow=block;endFill=1;endSize=8;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fontFamily=Inter;fontSize=10;fontColor=#334155;" target="src_internal" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
